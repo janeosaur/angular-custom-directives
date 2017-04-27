@@ -16,21 +16,31 @@
         <header class='navbar'>
           <h1 class='pull-left'>Cards Against Assembly</h1>
 
-          <scores></scores>
+          <div id="score" class='container-fluid' ng-controller="PlayersController as playersCtrl">
+            <ul>
+              <li ng-repeat="player in playersCtrl.players">
+                  <score-board name="{{player.name}}" points="{{player.points}}"></score-board>
+              </li>
+            </ul>
+          </div>
+
+          </div>
+
         </header>
 
         <section id="cards" class='container-fluid' ng-controller="CardsController as cards">
           <div class='row'>
 
             <div class='col-sm-6 col-md-6 col-lg-4' ng-repeat="card in cards.questions" >
-              <div class='card'>
-                <h4 class="card-title">{{card.question}}</h4>
-                <h6>Cards Against Assembly</h6>
-              </div>
+
+              <wdi-card question="{{card.question}}"></wdi-card>
+
             </div>
 
           </div>
         </section>
+
+              <wdi-card question="hello is this a question"></wdi-card>
 
       <footer>
         <p>Made with <span class='heart'>♥︎</span> at General Assembly</p>

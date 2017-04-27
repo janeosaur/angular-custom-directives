@@ -65,3 +65,12 @@ footer {
 footer .heart {
   color:#cf2e31;
 }
+
+span.name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+div#score {
+
+}
